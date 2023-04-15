@@ -17,9 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from zapis_api.views import HelloWorldView
+from zapis_api.views import SaleView, SupplyView, CreateSaleView, CreateSupplyView, UpdateSupplyView, UpdateSaleView, \
+    DeleteSaleView, DeleteSupplyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello-world/', HelloWorldView.as_view(), name='hello_world'),
+
+    path('sales/', SaleView.as_view()),
+    path('sales/<int:id>/', SaleView.as_view()),
+    path('sales/create/', CreateSaleView.as_view()),
+    path('sales/<int:id>/update/', UpdateSaleView.as_view()),
+    path('sales/<int:id>/delete/', DeleteSaleView.as_view()),
+
+    path('supplies/', SupplyView.as_view()),
+    path('supplies/<int:id>/', SupplyView.as_view()),
+    path('supplies/create/', CreateSupplyView.as_view()),
+    path('supplies/<int:id>/update/', UpdateSupplyView.as_view()),
+    path('supplies/<int:id>/delete/', DeleteSupplyView.as_view()),
 ]

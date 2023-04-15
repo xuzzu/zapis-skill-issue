@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'zapis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'umag_hacknu', # to change
+        'USER': 'xuzzu', # to change
+        'PASSWORD': '1234', # to change
+        'HOST': 'localhost', # while testing on local machine
+        'PORT': '3306',
     }
 }
 
